@@ -51,13 +51,14 @@ body{
     month[10] = "November";
     month[11] = "December";
     
-    var today = new Date();
-    var hrs = today.getHours();
-    var dayOfWeek = weekday[today.getDay()];
-    var date = dayOfWeek + ", " + month[today.getMonth()] + " " + today.getDate() + " " +today.getFullYear()  ;
+    var tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate() + 1)
+    var hrs = tomorrow.getHours();
+    var dayOfWeek = weekday[tomorrow.getDay()];
+    var date = dayOfWeek + ", " + month[tomorrow.getMonth()] + " " + tomorrow.getDate() + " " +tomorrow.getFullYear()  ;
 
     var greet;
-    greet = "Today";
+    greet = "Tomorrow";
 
 
     document.getElementById('lbl').innerHTML =
