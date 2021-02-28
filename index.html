@@ -56,13 +56,8 @@ body{
     var date = dayOfWeek + ", " + month[today.getMonth()] + " " + today.getDate() + " " +today.getFullYear()  ;
 
     var greet;
+    greet = "Today";
 
-    if (hrs < 12)
-        greet = 'Good Morning  ';
-    else if (hrs >= 12 && hrs <= 17)
-        greet = 'Good Afternoon ';
-    else if (hrs >= 17 && hrs <= 24)
-        greet = 'Good Evening  ';
 
     document.getElementById('lbl').innerHTML =
         greet+=`<div id="date"> ${date}</div>`;
