@@ -5,6 +5,7 @@
 #lbl {
     font-family: monospace;
     font-size: xx-large;
+    font-weight: bold;
     color: #626262;
     padding: 10px;
     border: 1px solid #ececec;
@@ -64,7 +65,7 @@ body{
     var dayOfWeek = weekday[tomorrow.getDay()];
     var date = start.getDate() + " " + month[start.getMonth()] + " " + start.getFullYear() +" - " + end.getDate() + " " + month[end.getMonth()] + " " + end.getFullYear()  ;
     var greet;
-    greet = "Week of : " + date;
+    greet = date;
 
 
     document.getElementById('lbl').innerHTML =
