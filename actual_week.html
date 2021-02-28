@@ -1,1 +1,71 @@
 
+<html> 
+<head>
+    <title>week</title> 
+    <style>
+#lbl {
+    font-family: monospace;
+    font-size: xx-large;
+    color: #626262;
+    padding: 5px;
+    border: 1px solid #ececec;
+    text-align: center;
+    line-height: 1.5;
+    height:85%
+
+
+}
+#date{
+    font-size:large;
+}
+body{
+    background-color: aliceblue;
+}
+    </style>
+</head>
+<body>
+    <div id="lbl"></div>
+</body>
+
+<script>
+    var weekday = new Array(7);
+    weekday[0] = "Sunday";
+    weekday[1] = "Monday";
+    weekday[2] = "Tuesday";
+    weekday[3] = "Wednesday";
+    weekday[4] = "Thursday";
+    weekday[5] = "Friday";
+    weekday[6] = "Saturday";
+    
+    var month = new Array(12);
+    month[0] = "January";
+    month[1] = "February";
+    month[2] = "Mars";
+    month[3] = "April";
+    month[4] = "May";
+    month[5] = "June";
+    month[6] = "July";
+    month[7] = "August";
+    month[8] = "September";
+    month[9] = "October";
+    month[10] = "November";
+    month[11] = "December";
+    
+    var today = new Date();
+    var start = new Date();
+    var end = new Date();
+    start.setDate(start.getDate() - today.getDay() + 1);
+    end.setDate(end.getDate() + (7 - today.getDay()) );   
+    var tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate() + 1)
+    var hrs = tomorrow.getHours();
+    var dayOfWeek = weekday[tomorrow.getDay()];
+    var date = start.getDate() + " " + month[start.getMonth()] + " " + start.getFullYear() +" - " + end.getDate() + " " + month[end.getMonth()] + " " + end.getFullYear()  ;
+    var greet;
+    greet = "Week of " + date;
+
+
+    document.getElementById('lbl').innerHTML =
+        greet+=`<div id="date"> ${date}</div>`;
+</script> 
+</html>
