@@ -1,16 +1,17 @@
 <html> 
 <head>
-    <title>Upcoming tasks</title> 
+    <title>week</title> 
     <style>
 #lbl {
     font-family: monospace;
     font-size: xx-large;
-    color: #626262;
-    padding: 5px;
-    border: 1px solid #ececec;
+    font-weight: bold;
+    color: #126262;
+    padding: 30px;
+    border: 2px solid #ececec;
     text-align: center;
-    line-height: 1.5;
-    height:85%
+    line-height: 1.0;
+
 
 
 }
@@ -50,18 +51,24 @@ body{
     month[10] = "November";
     month[11] = "December";
     
+    var today = new Date();
+    var start = new Date();
+    var end = new Date();
+	start.setDate(start.getDate() - 1)
+	today.setDate(today.getDate() - 1)
+	end.setDate(end.getDate() - 1)
+    start.setDate(start.getDate() - today.getDay() + 1);
+    end.setDate(end.getDate() + (7 - today.getDay()) );   
     var tomorrow = new Date();
     tomorrow.setDate(tomorrow.getDate() + 1)
     var hrs = tomorrow.getHours();
     var dayOfWeek = weekday[tomorrow.getDay()];
-    var date = dayOfWeek + ", " + tomorrow.getDate() + " " + month[tomorrow.getMonth()] + " " +tomorrow.getFullYear()  ;
-
+    var date = start.getDate() + " " + month[start.getMonth()] + " " + start.getFullYear() +" - " + end.getDate() + " " + month[end.getMonth()] + " " + end.getFullYear()  ;
     var greet;
-    greet = "Upcoming tasks";
+    greet = "Upcoming Tasks";
 
 
     document.getElementById('lbl').innerHTML =
-        greet 
-<!-- +=`<div id="date"> ${date}</div>`; -->
+        greet;
 </script> 
 </html>
